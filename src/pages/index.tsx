@@ -22,11 +22,11 @@ export default function Home({ blogs }: Props) {
   )
 }
 
-export const getStaticProps = async() => {
+export const getStaticProps = async () => {
   const blogs: Blogs = await client.get({ endpoint: 'blogs' })
   return {
     props: {
       blogs: blogs.contents,
-    }
+    },
   }
 }
